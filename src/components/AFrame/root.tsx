@@ -1,6 +1,5 @@
 //@ts-nocheck
 import "aframe";
-import "aframe-physics-system";
 
 import { DeepstreamClient } from "@deepstream/client";
 import { useEffect, useRef, useState } from "react";
@@ -207,7 +206,6 @@ function Root() {
           id="exoItalicFont"
           src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"
         ></a-asset-item>
-        <a-asset-item id="glbtestmodel" src="/cudillero.glb"></a-asset-item>
 
         <a-mixin
           id="eye"
@@ -224,7 +222,7 @@ function Root() {
           geometry="primitive: box; depth: 0.2; height: 1.5; width: 0.2"
           material="color: #222; shader: flat"
         ></a-mixin>
-      </a-assets>{" "}
+      </a-assets>
       <a-scene id="scene">
         <Entity primitive="a-camera" id="camera" />
         <a-sky src="#sky" rotation="0 -90 0"></a-sky>
@@ -233,11 +231,6 @@ function Root() {
           geometry="primitive: plane; width: 10000; height: 10000;"
           rotation="-90 0 0"
           material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"
-        ></a-entity>
-        <a-entity
-          id="glbtest"
-          gltf-model="#glbtestmodel"
-          position="0 0 0"
         ></a-entity>
       </a-scene>
     </>
